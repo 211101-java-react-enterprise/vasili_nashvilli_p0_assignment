@@ -57,9 +57,9 @@ public class Bank {
         System.out.println("username: "+username);
         String Password = consoleReader.readLine();
         System.out.println("password: "+Password);
-        if(username && Password){
+        //if(username && Password){
 
-        }
+        //}
 
     }
 
@@ -85,11 +85,10 @@ public class Bank {
         BankUser user = new BankUser(firstName, lastName, Email, userName, Password);
         System.out.println(user);
 
-        File filesOfUsers = new File("resources/data.txt");
+        File filesOfUsers = new File("data.txt");
         FileWriter fileWriter = new FileWriter(filesOfUsers, true);
         fileWriter.write(user.toFileString()+"\n");
         fileWriter.close();
-
     }
 
     static Scanner scanner = new Scanner(System.in);
