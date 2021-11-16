@@ -39,6 +39,7 @@ public class Bank {
                     case "6":
                         System.out.println("Thank you for the visit. We appreciate your business!");
                         isOn = false;
+                        consoleReader.close();
                         break;
                     default:
                         System.out.println("Wrong selection. Please pick a number from the Menu");
@@ -48,6 +49,7 @@ public class Bank {
                 ioe.printStackTrace();
             }
         }
+
     }
 
     private void login(BufferedReader consoleReader) throws IOException {
