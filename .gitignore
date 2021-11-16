@@ -1,0 +1,6 @@
+src/project/.idea/
+*.iml
+
+out/
+*.class
+*.jar
