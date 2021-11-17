@@ -18,48 +18,73 @@ public class BankUser {
         this.password = password;
     }
 
+    public BankUser(String id, String firstName, String lastName, String email, String username, String password) {
+        this(firstName, lastName, email, username, password);
+        this.id = id;
+    }
+    public String getId(){
+        return id;
+    }
+    public void setId(String id){
+        this.id=id;
+    }
+
+    public BankUser(){
+        super();
+    }
+
     public String getFirstName(){
+
         return firstName;
     }
     public void setFirstName(String firstName){
+
         this.firstName =firstName;
     }
 
     public String getLastName(){
+
         return lastName;
     }
     public void setLastName(String lastName){
+
         this.lastName = lastName;
     }
     public String getEmail(){
+
         return  email;
     }
 
     public void setEmail(String email) {
+
         this.email = email;
     }
 
     public String getUsername() {
+
         return username;
     }
 
     public void setUsername(String username) {
+
         this.username = username;
     }
 
     public String getPassword() {
+
         return password;
     }
 
     public void setPassword(String password) {
+
         this.password = password;
     }
     public String toFileString(){
         StringBuilder stringbuilder = new StringBuilder();
-        stringbuilder.append(firstName).append(", ")
-                    .append(lastName).append(", ")
-                .append(email).append(", ")
-                .append(username).append(", ")
+        stringbuilder.append(firstName).append(":")
+                    .append(lastName).append(":")
+                .append(email).append(":")
+                .append(username).append(":")
                 .append(password);
         return stringbuilder.toString();
     }
@@ -75,6 +100,7 @@ public class BankUser {
                 && Objects.equals(password, bankUser.password);
     }
     public int hashCode(){
+
         return Objects.hash(firstName, lastName, email, username, password);
     }
 

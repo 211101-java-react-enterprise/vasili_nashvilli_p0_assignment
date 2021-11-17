@@ -70,14 +70,19 @@ public class Bank {
         System.out.println("Please provide us with some basic information");
         System.out.println("First name ");
         String firstName = consoleReader.readLine();
+
         System.out.println("Last Name: ");
         String lastName = consoleReader.readLine();
+
         System.out.println("User Name: ");
         String userName = consoleReader.readLine();
+
         System.out.println("Email: ");
         String Email = consoleReader.readLine();
+
         System.out.println("Password: ");
         String Password = consoleReader.readLine();
+
         System.out.printf("The provided user information: {\"firstName\": %s, \"lastName\": " +
                 "%s, \"userName\": %s, \"Email\": %s. }", firstName, lastName, userName, Email);
         System.out.println();
@@ -87,10 +92,12 @@ public class Bank {
         BankUser user = new BankUser(firstName, lastName, Email, userName, Password);
         System.out.println(user);
 
-        File filesOfUsers = new File("data.txt");
+        File filesOfUsers = new File("userdatafile.txt"); //the file is in Revature file,
+        // I believe due to Apache being inside of revature folder, not inside the code file
         FileWriter fileWriter = new FileWriter(filesOfUsers, true);
         fileWriter.write(user.toFileString()+"\n");
         fileWriter.close();
+
     }
 
     static Scanner scanner = new Scanner(System.in);

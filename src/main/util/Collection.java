@@ -1,11 +1,11 @@
 package main.util;
 
-public interface Collection {
+public interface Collection<T> {
 
-    boolean add(Object o);
-    boolean contains(Object o);
+    boolean add(T element);
+    boolean contains(T element);
     boolean isEmpty();
-    boolean remove(Object o);
+    boolean remove(T element);
     int size();
 
 }
