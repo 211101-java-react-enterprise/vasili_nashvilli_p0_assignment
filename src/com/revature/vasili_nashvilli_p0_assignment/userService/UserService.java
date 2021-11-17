@@ -1,21 +1,27 @@
-//package userService;
-/*
+package userService;
+
+
+import com.revature.vasili_nashvilli_p0_assignment.exceptions.InvalidRequestException;
+import com.revature.vasili_nashvilli_p0_assignment.main.Bank;
+import com.revature.vasili_nashvilli_p0_assignment.userService.ResourcePersistenceException;
+import main.BankUser;
+import com.revature.vasili_nashvilli_p0_assignment.exceptions.ResourcePersistenceException;
 
 public class UserService {
 
-    private final AppUser userDAO ;
-    private AppUser sessionUser;
+    private final BankUser userDAO ;
+    private BankUser sessionUser;
 
-    public UserService(AppUser userDAO) {
+    public UserService(BankUser userDAO) {
         this.userDAO = userDAO;
         this.sessionUser = null;
     }
 
-    public AppUser getSessionUser() {
+    public BankUser getSessionUser() {
         return sessionUser;
     }
 
-    public boolean registerNewUser(AppUser newUser) {
+    public boolean registerNewUser(BankUser newUser) {
 
         if (!isUserValid(newUser)) {
             throw new InvalidRequestException("Invalid user data provided!");
@@ -38,10 +44,10 @@ public class UserService {
             throw new ResourcePersistenceException(msg);
         }
 
-        AppUser registeredUser = userDAO.save(newUser);
+        BankUser registeredUser = userDAO.save(newUser);
 
         if (registeredUser == null) {
-            throw new ResourcePersistenceException("The user could not be persisted to the datasource!");
+            throw new exceptions.ResourcePersistenceException("The user could not be persisted to the datasource!");
         }
 
         return true;
@@ -54,7 +60,7 @@ public class UserService {
             throw new InvalidRequestException("Invalid credential values provided!");
         }
 
-        AppUser authenticatedUser = userDAO.findUserByUsernameAndPassword(username, password);
+        BankUser authenticatedUser = userDAO.findUserByUsernameAndPassword(username, password);
 
         if (authenticatedUser == null) {
             throw new AuthenticationException();
@@ -72,7 +78,7 @@ public class UserService {
         return sessionUser != null;
     }
 
-    public boolean isUserValid(AppUser user) {
+    public boolean isUserValid(BankUser user) {
         if (user == null) return false;
         if (user.getFirstName() == null || user.getFirstName().trim().equals("")) return false;
         if (user.getLastName() == null || user.getLastName().trim().equals("")) return false;
@@ -82,4 +88,3 @@ public class UserService {
     }
 
 }
-*/

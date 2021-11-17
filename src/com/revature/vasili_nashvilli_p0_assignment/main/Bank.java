@@ -1,4 +1,4 @@
-package main;
+package com.revature.vasili_nashvilli_p0_assignment.main;
 import java.io.*;
 import java.util.Scanner;
 
@@ -89,7 +89,7 @@ public class Bank {
         System.out.println();
 
 
-        BankUser user = new BankUser(firstName, lastName, Email, userName, Password);
+        main.BankUser user = new main.BankUser(firstName, lastName, Email, userName, Password);
         System.out.println(user);
 
         File filesOfUsers = new File("userdatafile.txt"); //the file is in Revature file,

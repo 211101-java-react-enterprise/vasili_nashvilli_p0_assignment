@@ -11,7 +11,7 @@ public abstract class Screen {
     protected String name;
     protected String route;
     protected BufferedReader consoleReader;
-    protected ScreenRouter router;
+    protected Screens.ScreenRouter router;
 
     public Screen(String name, String route, BufferedReader consoleReader, ScreenRouter router) {
         this.name = name;
