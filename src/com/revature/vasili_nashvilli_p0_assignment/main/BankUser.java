@@ -9,6 +9,7 @@ public class BankUser {
     private String email;
     private String username;
     private String password;
+    private String id;
 
     public BankUser(String firstName, String lastName, String email, String username, String password) {
         this.firstName = firstName;
